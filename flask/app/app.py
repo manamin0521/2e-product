@@ -1,5 +1,18 @@
 from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, SubmitField, validators, ValidationError
+import numpy as np
+
+# ラベルから感情名を取得
+def getName(label):
+    print(label)
+    if label == 0:
+        return "嬉しい"
+    elif label == 1:
+        return "悲しい"
+    elif label == 2:
+        return "怒り"
+    else:
+        return "Error"
 
 app = Flask(__name__)
 
@@ -20,8 +33,9 @@ def predicts():
             Content = request.form["Content"]
 
             # ここで分析するコード
+            emotionName= getName(np.random.randint(0,3))
 
-            return render_template('result.html')
+            return render_template('result.html', emotionName=emotionName)
     elif request.method == 'GET':
         return render_template('index.html', form=form)
 
