@@ -37,6 +37,7 @@ def predicts():
     elif request.method == 'GET':
         return render_template('index.html', form=form)
 
+
 def remove_punct(text):
     """
     顔文字（emoticons）のみを残し､句読文字（punctation）の削除を行う｡
@@ -67,25 +68,71 @@ def load_text_tokenizer(file_name):
   with open(file_name+".pickle", 'rb') as handle:
       return pickle.load(handle)
 
-def predict(text):
 
-  removed = remove_punct(text)
-  removed_list = []
-  removed_list.append(removed)
 
-  loaded_tokenizer = load_text_tokenizer('tokenizer')
-  tokenized = loaded_tokenizer.texts_to_sequences(removed_list)
+# max_len = 124
+
+from janome.tokenizer import Tokenizer
+t = Tokenizer()
+def wakati(text):
+  tokens = t.tokenize(text)
+  tmp_sentence = ''
+  for token in tokens:
+    tmp_sentence += token.surface + ' '
+  return tmp_sentence
+
+def load_text_tokenizer(file_name):
+  # loading
+  with open(file_name+".pickle", 'rb') as handle:
+      return pickle.load(handle)
+
+def each_predict(text, model_name):
+
+  wakati_ed = wakati(text)
+  wakati_list = []
+  wakati_list.append(wakati_ed)
+
+  loaded_tokenizer = load_text_tokenizer('tokenizer_ja')
+  tokenized = loaded_tokenizer.texts_to_sequences(wakati_list)
 
   np_arr = np.array(tokenized)
-  max_len = 2505 #自動化したい
-  np_arr = pad_sequences(np_arr, maxlen=max_len)
+  np_arr = pad_sequences(np_arr, maxlen=124)
 
-  loaded_model = models.load_model('ml14_lstm.h5')
+  loaded_model = models.load_model(model_name)
   result = loaded_model.predict(np_arr)
-  if result >= 0.5:
-    return 'positive'
-  else:
-    return 'negative'
+  # print(result)
+  # if result >= 0.5:
+  #   print(model_name)
+  return result
+# 日本語8つの感情
+def predict(text):
+  result_dic = {}
+  model_list = ['Avg. Readers_Surprise', 'Avg. Readers_Sadness', 'Avg. Readers_Joy', 'Avg. Readers_Anger', 'Avg. Readers_Fear', 'Avg. Readers_Disgust', 'Avg. Readers_Trust']
+  for model in model_list:
+    result_dic[model] = each_predict(text, model + '.h5')
+  return result_dic
+
+
+
+# def predict(text):
+
+#   removed = remove_punct(text)
+#   removed_list = []
+#   removed_list.append(removed)
+
+#   loaded_tokenizer = load_text_tokenizer('tokenizer')
+#   tokenized = loaded_tokenizer.texts_to_sequences(removed_list)
+
+#   np_arr = np.array(tokenized)
+#   max_len = 2505 #自動化したい
+#   np_arr = pad_sequences(np_arr, maxlen=max_len)
+
+#   loaded_model = models.load_model('ml14_lstm.h5')
+#   result = loaded_model.predict(np_arr)
+#   if result >= 0.5:
+#     return 'positive'
+#   else:
+#     return 'negative'
 
 if __name__ == "__main__":
     app.run()
