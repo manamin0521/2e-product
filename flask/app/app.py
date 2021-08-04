@@ -8,10 +8,12 @@ from keras import models
 import numpy as np
 import re
 import pickle
+import json
 
 from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, SubmitField, validators, ValidationError
 import numpy as np
+from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
 
 app = Flask(__name__)
 
@@ -31,9 +33,9 @@ def predicts():
             Content = request.form["Content"]
 
             # ここで分析するコード
-            emotionName= predict(Content)
+            emotions = predict(Content)
 
-            return render_template('result.html', emotionName=emotionName)
+            return render_template('result.html', emotions=emotions)
     elif request.method == 'GET':
         return render_template('index.html', form=form)
 

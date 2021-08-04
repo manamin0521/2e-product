@@ -5,6 +5,12 @@
 </style>
 <div id="wrapper">
     <h1>分析結果</h1>
-    <div>これは {{ emotionName }} です</div>
-  <a href="./">トップへ戻る</a>
+    <div>驚き{{ emotions['Avg. Readers_Surprise'][0][0]*100 }}%</div>
+    <div>悲しみ{{ emotions['Avg. Readers_Sadness'][0][0]*100 }}%</div>
+    <div>喜び{{ emotions['Avg. Readers_Joy'][0][0]*100 }}%</div>
+    <div>怒り{{ emotions['Avg. Readers_Anger'][0][0]*100 }}%</div>
+    <div>恐れ{{ emotions['Avg. Readers_Fear'][0][0]*100 }}%</div>
+    <div>嫌悪{{ emotions['Avg. Readers_Disgust'][0][0]*100 }}%</div>
+    <div>信頼{{ emotions['Avg. Readers_Trust'][0][0]*100 }}%</div>
+    <a href="./">トップへ戻る</a>
 </div>
