@@ -18,10 +18,10 @@ from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
 app = Flask(__name__)
 
 class TextForm(Form):
-    Content = TextAreaField("分析する文章を入力してください",
+    Content = TextAreaField("分析したい文章を入力してね",
         [validators.InputRequired("この項目は入力必須です"), validators.Length(max=140)])
 
-    submit = SubmitField("判定")
+    submit = SubmitField("診断する")
 
 @app.route('/', methods = ['GET', 'POST'])
 def predicts():
@@ -70,8 +70,6 @@ def load_text_tokenizer(file_name):
   with open(file_name+".pickle", 'rb') as handle:
       return pickle.load(handle)
 
-
-
 # max_len = 124
 
 from janome.tokenizer import Tokenizer
@@ -109,7 +107,7 @@ def each_predict(text, model_name):
 # 日本語8つの感情
 def predict(text):
   result_dic = {}
-  model_list = ['Avg. Readers_Surprise', 'Avg. Readers_Sadness', 'Avg. Readers_Joy', 'Avg. Readers_Anger', 'Avg. Readers_Fear', 'Avg. Readers_Disgust', 'Avg. Readers_Trust']
+  model_list = ['Avg. Readers_Surprise', 'Avg. Readers_Sadness', 'Avg. Readers_Joy', 'Avg. Readers_Anger', 'Avg. Readers_Fear', 'Avg. Readers_Disgust', 'Avg. Readers_Trust', 'Avg. Readers_Anticipation']
   for model in model_list:
     result_dic[model] = each_predict(text, model + '.h5')
   return result_dic

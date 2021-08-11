@@ -1,16 +1,26 @@
-<style>
-    #wrapper {
-        text-align: center;
-    }
-</style>
-<div id="wrapper">
-    <h1>分析結果</h1>
-    <div>驚き{{ emotions['Avg. Readers_Surprise'][0][0]*100 }}%</div>
-    <div>悲しみ{{ emotions['Avg. Readers_Sadness'][0][0]*100 }}%</div>
-    <div>喜び{{ emotions['Avg. Readers_Joy'][0][0]*100 }}%</div>
-    <div>怒り{{ emotions['Avg. Readers_Anger'][0][0]*100 }}%</div>
-    <div>恐れ{{ emotions['Avg. Readers_Fear'][0][0]*100 }}%</div>
-    <div>嫌悪{{ emotions['Avg. Readers_Disgust'][0][0]*100 }}%</div>
-    <div>信頼{{ emotions['Avg. Readers_Trust'][0][0]*100 }}%</div>
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>tweet karte</title>
+</head>
+<div class="wrapper">
+    <h1>tweet karte</h1>
+    <ul class='container'>
+        <ul>
+            <li>驚き😲　{{ emotions['Avg. Readers_Surprise'][0][0]*100 }}%</li>
+            <li>悲しみ😭　{{ emotions['Avg. Readers_Sadness'][0][0]*100 }}%</li>
+        </ul>
+        <ul>
+            <li>喜び😄　{{ emotions['Avg. Readers_Joy'][0][0]*100 }}%</li>
+            <li>怒り💢　{{ emotions['Avg. Readers_Anger'][0][0]*100 }}%</li>
+        </ul>
+        <ul>
+            <li>恐れ😨　{{ emotions['Avg. Readers_Fear'][0][0]*100 }}%</li>
+            <li>嫌悪😠　{{ emotions['Avg. Readers_Disgust'][0][0]*100 }}%</li>
+        </ul>
+        <ul>
+            <li>信頼🤝　{{ emotions['Avg. Readers_Trust'][0][0]*100 }}%</li>
+            <li>期待😆　{{ emotions['Avg. Readers_Anticipation'][0][0]*100 }}%</li>
+        </ul>
+    </ul>
     <a href="./">トップへ戻る</a>
 </div>
