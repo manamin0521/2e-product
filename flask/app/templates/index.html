@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="2oiQ7jpso5JMgpa3KvMJNFMkleQy1zg9Hving6N9Rwk" />
-    <title>診断 | Emo Karte</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
-  </head>
-  <body>
-        <header>
-            <div class="container">
-                <div class="header-left">
-                    <a href="top.html">
-                        <img src="../images/logo.png">
-                    </a>
-                </div>
-                <span class="fa fa-bars menu-icon"></span>
-                <div class="header-right">
-                    <a href="index.html">診断</a>
-                    <!-- ログイン機能を実装したらコメントアウト
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="2oiQ7jpso5JMgpa3KvMJNFMkleQy1zg9Hving6N9Rwk" />
+  <title>診断 | Emo Karte</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <a href="/">
+          <img src="https://previews.dropbox.com/p/thumb/ABStB0DLvWzEJRGik_60TWdBYonHkmshENr_QOf0aWd5hURVHxSFDVRnGEgO3TAseDj_O36Rth5SKFOSRvQZduAyWxrxDqymb5rt0_8u5T1e2pP9H-XemqQ_YjXk2R_E1RnW6dmCYLQ3O6DkFCUSRpHxYUJSdJBvV3uirQyw5JEqFsCfUiu_yLkKvCZkbDn3QqlrXMAIvMtvJV061KEzpWWb_T5X0itl0I3vhEYXxa-sigbzPLHRcth24bc2BQrDgbjqF4Bg9sFUmOKigFkSgTerxez3p4J6YW0t0o_Tn6_azuuIrhCPX8nYk-bs8SdGZ4n-NeAnjn1KoNdQOHABYOfcZvL3cBTHS5AIA8KcFoS9Vw/p.png?fv_content=true&size_mode=5">
+        </a>
+      </div>
+      <span class="fa fa-bars menu-icon"></span>
+      <div class="header-right">
+        <a href="./about.html">About</a>
+        <a href="./index.html">診断</a>
+        <!-- ログイン機能を実装したらコメントアウト
                     <a href="new.html" class="login">Log In</a>
                     <a href="login.html" class="login">Sign Up</a>
                     -->
-                </div>
-            </div>
-        </header>
-        <div class="wrapper">
-            <div class="app-container">
-                <h1>診断</h1>
-                <form method="post">
-                    {{ form.Content.label }}
-                    <br>
-                    <textarea placeholder="入力の上限は124文字です" id="Content" name="Content" class="form" required></textarea>
-                    <div>
-                        <input class="button" type="submit" value="診断する">
-                    </div>
-                </form>
-            </div>
+      </div>
+    </div>
+  </header>
+  <div class="index-wrapper">
+    <div class="app-container">
+      <h1>Emo Karte</h1>
+      <form method="post">
+        {{ form.Content.label }}
+        <br>
+        <textarea placeholder="入力の上限は124文字です" id="Content" name="Content" class="form" required></textarea>
+        <div>
+          <input class="button" type="submit" value="診断する">
         </div>
-    </body>
+      </form>
+    </div>
+  </div>
+</body>
+
 </html>

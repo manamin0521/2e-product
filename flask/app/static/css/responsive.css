@@ -16,11 +16,9 @@
   /* スマホ向けレイアウト */
 @media all and (max-width: 670px) {
 
-    /*
     .btn {
         width: 100%;
     }
-    */
 
     .top-wrapper {
         text-align: left;
@@ -43,4 +41,5 @@
     .top-wrapper p {
         font-size: 14px;
     }
+
 }

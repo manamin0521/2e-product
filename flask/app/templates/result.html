@@ -1,54 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>結果 | Emo Karte</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-        <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <div class="header-left">
-                    <a href="top.html">
-                        <img src="../images/logo.png">
-                    </a>
-                </div>
-                <span class="fa fa-bars menu-icon"></span>
-                <div class="header-right">
-                    <a href="index.html">診断</a>
-                    <!-- ログイン機能を実装したらコメントアウト
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>結果 | Emo Karte</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <a href="/">
+          <img src="https://previews.dropbox.com/p/thumb/ABStB0DLvWzEJRGik_60TWdBYonHkmshENr_QOf0aWd5hURVHxSFDVRnGEgO3TAseDj_O36Rth5SKFOSRvQZduAyWxrxDqymb5rt0_8u5T1e2pP9H-XemqQ_YjXk2R_E1RnW6dmCYLQ3O6DkFCUSRpHxYUJSdJBvV3uirQyw5JEqFsCfUiu_yLkKvCZkbDn3QqlrXMAIvMtvJV061KEzpWWb_T5X0itl0I3vhEYXxa-sigbzPLHRcth24bc2BQrDgbjqF4Bg9sFUmOKigFkSgTerxez3p4J6YW0t0o_Tn6_azuuIrhCPX8nYk-bs8SdGZ4n-NeAnjn1KoNdQOHABYOfcZvL3cBTHS5AIA8KcFoS9Vw/p.png?fv_content=true&size_mode=5">
+        </a>
+      </div>
+      <span class="fa fa-bars menu-icon"></span>
+      <div class="header-right">
+        <a href="./about.html">About</a>
+        <a href="./index.html">診断</a>
+        <!-- ログイン機能を実装したらコメントアウト
                     <a href="new.html" class="login">Log In</a>
                     <a href="login.html" class="login">Sign Up</a>
                     -->
-                </div>
-            </div>
-        </header>
-            <div class="wrapper">
-                <h1>結果</h1>
-                <ul class="app-container">
-                  <ul>
-                      <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
-                  </ul>
-                  <ul>
-                      <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
-                  </ul>
-                  <ul>
-                      <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
-                      <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
-                  </ul>
-                  <ul>
-                      <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
-                      <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
-                  </ul>
-                  <ul>
-                      <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
-                      <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
-                  </ul>
-                </ul>
-                <a href="index.html">診断画面へ戻る</a>
-            </div>
-    </body>
+      </div>
+    </div>
+  </header>
+  <div class="result-wrapper">
+    <h1>結果</h1>
+    <ul class="app-container">
+      <ul>
+        <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
+      </ul>
+      <ul>
+        <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
+      </ul>
+      <ul>
+        <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
+        <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
+      </ul>
+      <ul>
+        <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
+        <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
+      </ul>
+      <ul>
+        <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
+        <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
+      </ul>
+    </ul>
+    <a href="./index.html">もう一度診断する</a>
+  </div>
+</body>
+
 </html>

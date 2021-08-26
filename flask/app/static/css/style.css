@@ -1,63 +1,64 @@
 /* top.html */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html{
-    height: 100%;
+html {
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    height: 100%;
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  height: 100%;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .clear {
-    clear: left;
+  clear: left;
 }
 
-.container{
-    max-width: 1170px;
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .top-wrapper {
-    padding: 180px 0 100px 0;
-    height: 100%;
-    background-image: url(https://cdn.pixabay.com/photo/2016/11/29/07/21/book-1868068_1280.jpg);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
+  padding: 180px 0 100px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2016/11/29/07/21/book-1868068_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
 }
 
 .top-wrapper h1 {
-    opacity: 0.7;
-    font-size: 45px;
-    letter-spacing: 5px;
+  opacity: 0.8;
+  font-size: 45px;
+  letter-spacing: 5px;
 }
 
 .top-wrapper p {
-    opacity: 0.7;
+  opacity: 0.8;
 }
 
-/*
 .btn-wrapper {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 100px 0;
 }
 
 .btn-wrapper p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
+
+/*
 
 .signup {
     background-color: #239b76;
@@ -67,64 +68,76 @@ a {
     background-color: #55acee;
 }
 
+*/
+
+.diagnosis {
+  padding: 15px 40px;
+  background-color: #f2b84b;
+  cursor: pointer;
+  box-shadow: 0 7px #d9a443;
+}
+
+.diagnosis:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
 .btn {
-    padding: 8px 24px;
-    color: white;
-    display: inline-block;
-    opacity: 0.8;
-    border-radius: 4px;
-    text-align: center;
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .btn:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
-*/
-
 .fa {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 header {
-    height: 65px;
-    width: 100%;
-    background-color: rgba(13, 13, 13, 0.9);
-    position :fixed;
-    top: 0;
-    z-index: 10;
+  height: 65px;
+  width: 100%;
+  background-color: rgba(13, 34, 38, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 .header-left {
-    float: left;
-    margin: 5px 0;
+  float: left;
+  margin: 5px 0;
 }
 
 .header-right {
-    float: right;
-    margin-right: -25px;
+  float: right;
+  margin-right: -25px;
 }
 
 .header-right a {
-    line-height: 65px;
-    padding: 0 25px;
-    color: white;
-    display: block;
-    float: left;
-    transition: all 0.5s;
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
 }
 
 .header-right a:hover {
-    background-color: rgba(235, 238, 242, 0.3);
+  background-color: rgba(217, 215, 191, 0.3);
 }
 
-
 .menu-icon {
-    color: white;
-    float: right;
-    font-size: 25px;
-    padding: 21px 0;
-    display: none;
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
 }
 
 /*
@@ -143,56 +156,68 @@ footer {
 
 /* index.html */
 
-.app-container ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 0px;
+.app-container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 0px;
 }
-.app-container ul li{
-    padding: 10px;
-    width: 180px;
+
+.app-container ul li {
+  padding: 10px;
+  width: 180px;
+  color: #474644;
 }
-.wrapper {
-    padding: 180px 0 100px 0;
-    height: 100%;
-    background-image: url(https://cdn.pixabay.com/photo/2016/11/29/07/21/book-1868068_1280.jpg);
-    background-size: cover;
-    background-position: center;
-    text-align: center;
+
+.index-wrapper {
+  padding: 240px 0 100px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.result-wrapper {
+  padding: 180px 0 100px 0;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1473181488821-2d23949a045a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 h1 {
-    margin: 40px;
-    font-size: 1.5em;
+  margin: 30px;
+  font-size: 1.5em;
 }
 
 .button {
-    color: #fff;
-    background-color: #eb6100;
-    border-radius: 1vh;
-    margin-top: 20px;
-    width: 150px;
-    height: 30px;
+  color: #fff;
+  background-color: #cc6f5c;
+  border-radius: 1vh;
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
 }
 
 .button:hover {
-    color: #f56500;
-    background: #fff;
+  color: #cc6f5c;
+  background: #fff;
 }
 
 .form {
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #e5e5e5;
-    width: 20%;
-    min-width: 150px;
-    height: 300px;
-    padding: 8px;
-    margin-top:20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  width: 50%;
+  min-width: 150px;
+  height: 240px;
+  padding: 8px;
+  margin-top: 20px;
 }
