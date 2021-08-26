@@ -29,22 +29,24 @@
             <div class="wrapper">
                 <h1>結果</h1>
                 <ul class="app-container">
-                    <ul>
-                        <li>驚き😲　{{ emotions['Avg. Readers_Surprise'][0][0]*100 }}%</li>
-                        <li>悲しみ😭　{{ emotions['Avg. Readers_Sadness'][0][0]*100 }}%</li>
-                    </ul>
-                    <ul>
-                        <li>喜び😄　{{ emotions['Avg. Readers_Joy'][0][0]*100 }}%</li>
-                        <li>怒り💢　{{ emotions['Avg. Readers_Anger'][0][0]*100 }}%</li>
-                    </ul>
-                    <ul>
-                        <li>恐れ😨　{{ emotions['Avg. Readers_Fear'][0][0]*100 }}%</li>
-                        <li>嫌悪😠　{{ emotions['Avg. Readers_Disgust'][0][0]*100 }}%</li>
-                    </ul>
-                    <ul>
-                        <li>信頼🤝　{{ emotions['Avg. Readers_Trust'][0][0]*100 }}%</li>
-                        <li>期待😆　{{ emotions['Avg. Readers_Anticipation'][0][0]*100 }}%</li>
-                    </ul>
+                  <ul>
+                      <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
+                  </ul>
+                  <ul>
+                      <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
+                  </ul>
+                  <ul>
+                      <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
+                      <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
+                  </ul>
+                  <ul>
+                      <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
+                      <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
+                  </ul>
+                  <ul>
+                      <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
+                      <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
+                  </ul>
                 </ul>
                 <a href="index.html">診断画面へ戻る</a>
             </div>
