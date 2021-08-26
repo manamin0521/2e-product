@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <title>emo karte</title>
-</head>
-<div class="wrapper">
-    <h1>emo karte</h1>
-    <form method="post">
-        {{ form.Content.label }}<br>
-        <textarea id="Content" name="Content" class="form" required></textarea>
-        <div>
-            <input class="button" type="submit" value="診断する">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>診断 | Emo Karte</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a href="top.html">
+                        <img src="../images/logo.png">
+                    </a>
+                </div>
+                <span class="fa fa-bars menu-icon"></span>
+                <div class="header-right">
+                    <a href="index.html">診断</a>
+                    <!-- ログイン機能を実装したらコメントアウト
+                    <a href="new.html" class="login">Log In</a>
+                    <a href="login.html" class="login">Sign Up</a>
+                    -->
+                </div>
+            </div>
+        </header>
+        <div class="wrapper">
+            <div class="app-container">
+                <h1>診断</h1>
+                <form method="post">
+                    <label for="Content">分析したい文章を入力して下さい。</label>
+                    <br>
+                    <textarea placeholder="入力の上限は124文字です" id="Content" name="Content" class="form" required></textarea>
+                    <div>
+                        <input class="button" type="submit" value="診断する">
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
-</div>
+    </body>
+</html>

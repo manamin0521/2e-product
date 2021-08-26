@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-<head>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <title>emo karte</title>
-</head>
-<div class="wrapper">
-    <h1>emo karte</h1>
-    <ul class="container">
-        <ul>
-            <li>驚き😲　{{ emotions['Avg. Readers_Surprise'][0][0]*100 }}%</li>
-            <li>悲しみ😭　{{ emotions['Avg. Readers_Sadness'][0][0]*100 }}%</li>
-        </ul>
-        <ul>
-            <li>喜び😄　{{ emotions['Avg. Readers_Joy'][0][0]*100 }}%</li>
-            <li>怒り💢　{{ emotions['Avg. Readers_Anger'][0][0]*100 }}%</li>
-        </ul>
-        <ul>
-            <li>恐れ😨　{{ emotions['Avg. Readers_Fear'][0][0]*100 }}%</li>
-            <li>嫌悪😠　{{ emotions['Avg. Readers_Disgust'][0][0]*100 }}%</li>
-        </ul>
-        <ul>
-            <li>信頼🤝　{{ emotions['Avg. Readers_Trust'][0][0]*100 }}%</li>
-            <li>期待😆　{{ emotions['Avg. Readers_Anticipation'][0][0]*100 }}%</li>
-        </ul>
-    </ul>
-    <a href="./">トップへ戻る</a>
-</div>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>結果 | Emo Karte</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="header-left">
+                    <a href="top.html">
+                        <img src="../images/logo.png">
+                    </a>
+                </div>
+                <span class="fa fa-bars menu-icon"></span>
+                <div class="header-right">
+                    <a href="index.html">診断</a>
+                    <!-- ログイン機能を実装したらコメントアウト
+                    <a href="new.html" class="login">Log In</a>
+                    <a href="login.html" class="login">Sign Up</a>
+                    -->
+                </div>
+            </div>
+        </header>
+            <div class="wrapper">
+                <h1>結果</h1>
+                <ul class="app-container">
+                    <ul>
+                        <li>驚き😲　{{ emotions['Avg. Readers_Surprise'][0][0]*100 }}%</li>
+                        <li>悲しみ😭　{{ emotions['Avg. Readers_Sadness'][0][0]*100 }}%</li>
+                    </ul>
+                    <ul>
+                        <li>喜び😄　{{ emotions['Avg. Readers_Joy'][0][0]*100 }}%</li>
+                        <li>怒り💢　{{ emotions['Avg. Readers_Anger'][0][0]*100 }}%</li>
+                    </ul>
+                    <ul>
+                        <li>恐れ😨　{{ emotions['Avg. Readers_Fear'][0][0]*100 }}%</li>
+                        <li>嫌悪😠　{{ emotions['Avg. Readers_Disgust'][0][0]*100 }}%</li>
+                    </ul>
+                    <ul>
+                        <li>信頼🤝　{{ emotions['Avg. Readers_Trust'][0][0]*100 }}%</li>
+                        <li>期待😆　{{ emotions['Avg. Readers_Anticipation'][0][0]*100 }}%</li>
+                    </ul>
+                </ul>
+                <a href="index.html">診断画面へ戻る</a>
+            </div>
+    </body>
+</html>
