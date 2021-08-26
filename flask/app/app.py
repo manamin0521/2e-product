@@ -6,14 +6,15 @@
 from keras.preprocessing.sequence import pad_sequences
 from keras import models
 import numpy as np
-import re
+# import re
 import pickle
-import json
+# import json
 
 from flask import Flask, render_template, request
 from wtforms import Form, TextAreaField, SubmitField, validators, ValidationError
-import numpy as np
-from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
+from janome.tokenizer import Tokenizer
+# import numpy as np
+# from decimal import Decimal, ROUND_HALF_UP, ROUND_HALF_EVEN
 
 app = Flask(__name__)
 
@@ -33,37 +34,44 @@ def predicts():
             Content = request.form["Content"]
 
             # ここで分析するコード
-            emotions = predict(Content)
+            # emotions = predict(Content)
 
-            return render_template('result.html', emotions=emotions)
+            tmp = predict(Content)
+            emotions = {}
+            for key, value in tmp.items():
+              emotions[key] = round(value[0][0]*100, 1)
+            emotions = sorted(emotions.items(), key=lambda x:x[1], reverse=True)
+            emotions_label_dic = {'Avg. Readers_Surprise':'驚き😲', 'Avg. Readers_Sadness':'悲しみ😭', 'Avg. Readers_Joy':'喜び😄', 'Avg. Readers_Anger':'怒り💢', 'Avg. Readers_Fear':'恐れ😨', 'Avg. Readers_Disgust':'嫌悪😠', 'Avg. Readers_Trust':'信頼🤝', 'Avg. Readers_Anticipation':'期待😆'}
+
+            return render_template('result.html', emotions=emotions, emotions_label_dic=emotions_label_dic)
     elif request.method == 'GET':
         return render_template('index.html', form=form)
 
 
-def remove_punct(text):
-    """
-    顔文字（emoticons）のみを残し､句読文字（punctation）の削除を行う｡
-    """
-    # 目の部分: : or ; or =
-    # 鼻の部分: -
-    # 口の部分: ) or ( or D or P
-    pattern = re.compile(r"(?::|;|=)(?:-)?(?:\)|\(|D|P)")
-    # パターンに当てはまる文字列をすべて抽出して､リストに格納
-    # いったんリストに保存しておいて､あとですべての記号を削除したtextに付け足す
-    emoticons = pattern.findall(text)
-    # 文頭などにある大文字を小文字に変換
-    lower = text.lower()
-    # [\W]+で記号の並びを捕捉して空白ひとつに置き換える
-    removed = re.sub(r"[\W]+", " ", lower)
-    # 顔文字を半角スペース区切りでひとつの文字列に結合
-    emoticons = " ".join(emoticons)
-    # 顔文字に含まれる鼻の部分を削除する
-    # 鼻があってもなくても､目と口が同じなら同じ顔文字として認識されるようになる
-    emoticons = emoticons.replace("-","")
-    # lowerとemoticonsを結合
-    # 単語を区切るため､間には半角スペースを入れておく
-    connected = removed + ' ' + emoticons
-    return connected
+# def remove_punct(text):
+#     """
+#     顔文字（emoticons）のみを残し､句読文字（punctation）の削除を行う｡
+#     """
+#     # 目の部分: : or ; or =
+#     # 鼻の部分: -
+#     # 口の部分: ) or ( or D or P
+#     pattern = re.compile(r"(?::|;|=)(?:-)?(?:\)|\(|D|P)")
+#     # パターンに当てはまる文字列をすべて抽出して､リストに格納
+#     # いったんリストに保存しておいて､あとですべての記号を削除したtextに付け足す
+#     emoticons = pattern.findall(text)
+    # # 文頭などにある大文字を小文字に変換
+    # lower = text.lower()
+    # # [\W]+で記号の並びを捕捉して空白ひとつに置き換える
+    # removed = re.sub(r"[\W]+", " ", lower)
+    # # 顔文字を半角スペース区切りでひとつの文字列に結合
+    # emoticons = " ".join(emoticons)
+    # # 顔文字に含まれる鼻の部分を削除する
+    # # 鼻があってもなくても､目と口が同じなら同じ顔文字として認識されるようになる
+    # emoticons = emoticons.replace("-","")
+    # # lowerとemoticonsを結合
+    # # 単語を区切るため､間には半角スペースを入れておく
+    # connected = removed + ' ' + emoticons
+    # return connected
 
 def load_text_tokenizer(file_name):
   # loading
@@ -135,4 +143,4 @@ def predict(text):
 #     return 'negative'
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
