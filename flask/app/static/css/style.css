@@ -262,6 +262,101 @@ h1 {
   margin-top: 20px;
 }
 
+/* result.html フィードバック */
+
+.open {
+  margin: 20px 0;
+	cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+  color: #502E73;
+}
+#pop-up {
+	display: none; /* label でコントロールするので input は非表示に */
+}
+.overlay {
+	display: none; /* input にチェックが入るまでは非表示に */
+}
+#pop-up:checked + .overlay {
+	display: block;
+	z-index: 9999;
+	background-color: #00000070;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+.window {
+	width: 90vw;
+	max-width: 380px;
+	height: 240px;
+	background-color: #ffffff;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.text {
+	font-size: 18px;
+	margin: 0;
+}
+.close {
+	cursor:pointer;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	font-size: 20px;
+}
+
+/* thanks.html */
+
+.thanks-wrapper {
+  padding: 500px 0 150px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2020/04/22/11/59/thank-you-5077738_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.thanks-container{
+  padding: 5px 0 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 40%;
+  background-color: rgba(64,58,56,0.6);
+  text-align: center;
+}
+
+.btn-home-wrapper {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.btn-home-wrapper p {
+  margin: 10px 0;
+}
+
+.home {
+  padding: 15px 40px;
+  background-color: #D68F3E;
+  cursor: pointer;
+  box-shadow: 0 7px #BD7E37;
+}
+
+.home:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+
+
 /* 解析中ボタン
 
 .button {
