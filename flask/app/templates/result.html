@@ -31,31 +31,34 @@
     </div>
   </header>
   <div class="result-wrapper wrapper">
-    <h1>結果</h1>
-    <p>最も強い感情は、{{ emotions_label_dic[emotions[0][0]] }}です！</p>
-    <br>
-    <h3>詳細</h3>
-    <ul class="app-container result-container">
-      <ul>
-        <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
+    <div class="rank">
+      <h1>結果</h1>
+      <p>最も強い感情は、{{ emotions_label_dic[emotions[0][0]] }}です！</p>
+      <br>
+      <h3>詳細</h3>
+      <ul class="app-container result-container">
+        <ul>
+          <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
+        </ul>
+        <ul>
+          <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
+        </ul>
+        <ul>
+          <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
+          <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
+        </ul>
+        <ul>
+          <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
+          <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
+        </ul>
+        <ul>
+          <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
+          <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
+        </ul>
       </ul>
-      <ul>
-        <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
-      </ul>
-      <ul>
-        <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
-        <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
-      </ul>
-      <ul>
-        <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
-        <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
-      </ul>
-      <ul>
-        <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
-        <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
-      </ul>
-    </ul>
-    <a href="./index.html">もう一度診断する</a>
+      <a href="./index.html">もう一度診断する</a>
+      <br>
+    </div>
   </div>
   <footer>
     <div class="container">

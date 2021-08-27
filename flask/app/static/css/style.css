@@ -159,6 +159,20 @@ footer {
 
 /* index.html, result.html */
 
+.rank {
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  background-color: rgba(235,239,242,0.7);
+  text-align: center;
+}
+
+.result-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .app-container ul {
   display: flex;
   flex-direction: row;
@@ -173,10 +187,6 @@ footer {
   color: #474644;
 }
 
-.result-container{
-  background-color: #e5e5e5
-}
-
 .index-wrapper {
   padding: 240px 0 100px 0;
   height: 100%;
@@ -187,7 +197,7 @@ footer {
 }
 
 .result-wrapper {
-  padding: 180px 0 100px 0;
+  padding: 130px 0 100px 0;
   height: 100%;
   background-image: url(https://images.unsplash.com/photo-1473181488821-2d23949a045a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
   background-size: cover;
