@@ -1,15 +1,16 @@
-<title>Emotion Predict App</title>
-<style>
-    #wrapper {
-        text-align: center;
-    }
-</style>
-<div id="wrapper">
-    <h1>Emotion Predict App</h1>
+<!DOCTYPE html>
+<head>
+    <meta name="google-site-verification" content="2oiQ7jpso5JMgpa3KvMJNFMkleQy1zg9Hving6N9Rwk" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>emo karte</title>
+</head>
+<div class="wrapper">
+    <h1>emo karte</h1>
     <form method="post">
         {{ form.Content.label }}<br>
-        {{ form.Content }}
-        <br>
-        {{ form.submit }}
+        <textarea id="Content" name="Content" class="form" required></textarea>
+        <div>
+            <input class="button" type="submit" value="診断する">
+        </div>
     </form>
 </div>

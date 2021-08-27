@@ -1,10 +1,62 @@
-<style>
-    #wrapper {
-        text-align: center;
-    }
-</style>
-<div id="wrapper">
-    <h1>分析結果</h1>
-    <div>これは {{ emotionName }} です</div>
-  <a href="./">トップへ戻る</a>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <title>emo karte</title>
+</head>
+<div class="wrapper">
+    <h1>emo karte</h1>
+    <ul class="container">
+        <ul>
+            <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
+        </ul>
+        <ul>
+            <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
+        </ul>
+        <ul>
+            <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
+            <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
+        </ul>
+        <ul>
+            <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
+            <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
+        </ul>
+        <ul>
+            <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
+            <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
+        </ul>
+    </ul>
+    <ul>
+        <form action="{{ url_for('save_data') }}" method="POST">
+            {{ text }}
+            <input type="hidden" name="Content" value="{{ text }}"><br>
+
+            驚き
+            <input type="radio" name="surprise" value=1>〇
+            <input type="radio" name="surprise" value=0 checked='checked'>✖<br>
+            悲しみ
+            <input type="radio" name="sadness" value=1>〇
+            <input type="radio" name="sadness" value=0 checked='checked'>✖<br>
+            喜び
+            <input type="radio" name="joy" value=1>〇
+            <input type="radio" name="joy" value=0 checked='checked'>✖<br>
+            怒り
+            <input type="radio" name="anger" value=1>〇
+            <input type="radio" name="anger" value=0 checked='checked'>✖<br>
+            恐れ
+            <input type="radio" name="fear" value=1>〇
+            <input type="radio" name="fear" value=0 checked='checked'>✖<br>
+            嫌悪
+            <input type="radio" name="disgust" value=1>〇
+            <input type="radio" name="disgust" value=0 checked='checked'>✖<br>
+            信頼
+            <input type="radio" name="trust" value=1>〇
+            <input type="radio" name="trust" value=0 checked='checked'>✖<br>
+            期待
+            <input type="radio" name="anticipation" value=1>〇
+            <input type="radio" name="anticipation" value=0 checked='checked'>✖<br>
+
+            <input type="submit" value="送信">
+        </form>
+    </ul>
+    <a href="./">トップへ戻る</a>
 </div>
