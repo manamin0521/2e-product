@@ -140,21 +140,24 @@ header {
   display: none;
 }
 
-/*
+.wrapper {
+  position: relative;
+}
 
 footer p {
-    color: #b3aeb5;
-    font-size: 12px;
+  color: #b3aeb5;
+  font-size: 12px;
 }
 
 footer {
-    padding-top: 30px;
-    padding-bottom: 20px;
+  width: 100%;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
 }
 
-*/
-
-/* index.html */
+/* index.html, result.html */
 
 .app-container ul {
   display: flex;
@@ -168,6 +171,10 @@ footer {
   padding: 10px;
   width: 180px;
   color: #474644;
+}
+
+.result-container{
+  background-color: #e5e5e5
 }
 
 .index-wrapper {
@@ -186,6 +193,10 @@ footer {
   background-size: cover;
   background-position: center;
   text-align: center;
+}
+
+.result-wrapper p {
+  font-size: 1.5em;
 }
 
 ul {
@@ -220,4 +231,22 @@ h1 {
   height: 240px;
   padding: 8px;
   margin-top: 20px;
+}
+
+/* about.html */
+
+.about-wrapper {
+  padding: 180px 0 100px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2016/01/09/18/28/notepad-1130743_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.about-container{
+  padding: 5px;
+  height: 100%;
+  background-color: rgba(64,58,56,0.6);
 }

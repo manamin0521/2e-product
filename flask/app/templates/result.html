@@ -15,7 +15,8 @@
     <div class="container">
       <div class="header-left">
         <a href="/">
-          <img src="https://previews.dropbox.com/p/thumb/ABStB0DLvWzEJRGik_60TWdBYonHkmshENr_QOf0aWd5hURVHxSFDVRnGEgO3TAseDj_O36Rth5SKFOSRvQZduAyWxrxDqymb5rt0_8u5T1e2pP9H-XemqQ_YjXk2R_E1RnW6dmCYLQ3O6DkFCUSRpHxYUJSdJBvV3uirQyw5JEqFsCfUiu_yLkKvCZkbDn3QqlrXMAIvMtvJV061KEzpWWb_T5X0itl0I3vhEYXxa-sigbzPLHRcth24bc2BQrDgbjqF4Bg9sFUmOKigFkSgTerxez3p4J6YW0t0o_Tn6_azuuIrhCPX8nYk-bs8SdGZ4n-NeAnjn1KoNdQOHABYOfcZvL3cBTHS5AIA8KcFoS9Vw/p.png?fv_content=true&size_mode=5">
+          <img
+            src="https://previews.dropbox.com/p/thumb/ABStB0DLvWzEJRGik_60TWdBYonHkmshENr_QOf0aWd5hURVHxSFDVRnGEgO3TAseDj_O36Rth5SKFOSRvQZduAyWxrxDqymb5rt0_8u5T1e2pP9H-XemqQ_YjXk2R_E1RnW6dmCYLQ3O6DkFCUSRpHxYUJSdJBvV3uirQyw5JEqFsCfUiu_yLkKvCZkbDn3QqlrXMAIvMtvJV061KEzpWWb_T5X0itl0I3vhEYXxa-sigbzPLHRcth24bc2BQrDgbjqF4Bg9sFUmOKigFkSgTerxez3p4J6YW0t0o_Tn6_azuuIrhCPX8nYk-bs8SdGZ4n-NeAnjn1KoNdQOHABYOfcZvL3cBTHS5AIA8KcFoS9Vw/p.png?fv_content=true&size_mode=5">
         </a>
       </div>
       <span class="fa fa-bars menu-icon"></span>
@@ -29,9 +30,12 @@
       </div>
     </div>
   </header>
-  <div class="result-wrapper">
+  <div class="result-wrapper wrapper">
     <h1>結果</h1>
-    <ul class="app-container">
+    <p>最も強い感情は、{{ emotions_label_dic[emotions[0][0]] }}です！</p>
+    <br>
+    <h3>詳細</h3>
+    <ul class="app-container result-container">
       <ul>
         <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
       </ul>
@@ -53,6 +57,11 @@
     </ul>
     <a href="./index.html">もう一度診断する</a>
   </div>
+  <footer>
+    <div class="container">
+      <p>©2021 Emo Karte. All Rights Reserved.</p>
+    </div>
+  </footer>
 </body>
 
 </html>
