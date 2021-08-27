@@ -56,8 +56,42 @@
           <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
         </ul>
       </ul>
-      <a href="./index.html">もう一度診断する</a>
-      <br>
+    </ul>
+    <ul>
+        <form action="{{ url_for('save_data') }}" method="POST">
+            {{ text }}
+            <input type="hidden" name="Content" value="{{ text }}"><br>
+
+            驚き
+            <input type="radio" name="surprise" value=1>〇
+            <input type="radio" name="surprise" value=0 checked='checked'>✖<br>
+            悲しみ
+            <input type="radio" name="sadness" value=1>〇
+            <input type="radio" name="sadness" value=0 checked='checked'>✖<br>
+            喜び
+            <input type="radio" name="joy" value=1>〇
+            <input type="radio" name="joy" value=0 checked='checked'>✖<br>
+            怒り
+            <input type="radio" name="anger" value=1>〇
+            <input type="radio" name="anger" value=0 checked='checked'>✖<br>
+            恐れ
+            <input type="radio" name="fear" value=1>〇
+            <input type="radio" name="fear" value=0 checked='checked'>✖<br>
+            嫌悪
+            <input type="radio" name="disgust" value=1>〇
+            <input type="radio" name="disgust" value=0 checked='checked'>✖<br>
+            信頼
+            <input type="radio" name="trust" value=1>〇
+            <input type="radio" name="trust" value=0 checked='checked'>✖<br>
+            期待
+            <input type="radio" name="anticipation" value=1>〇
+            <input type="radio" name="anticipation" value=0 checked='checked'>✖<br>
+
+            <input type="submit" value="送信">
+        </form>
+    </ul>
+    <a href="./index.html">もう一度診断する</a>
+    <br>
     </div>
   </div>
   <footer>
