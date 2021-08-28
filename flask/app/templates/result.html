@@ -1,110 +1,135 @@
 <!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結果 | Emo Karte</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>結果 | Emo Karte</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
-</head>
-
-<body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <a href="/">
-          <img src="https://dl.dropboxusercontent.com/s/6lm7i9nv088ekgt/logo.png">
-        </a>
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="./about.html">About</a>
-        <a href="./index.html">診断</a>
-        <!-- ログイン機能を実装したらコメントアウト
-                    <a href="new.html" class="login">Log In</a>
-                    <a href="login.html" class="login">Sign Up</a>
-                    -->
-      </div>
-    </div>
-  </header>
-  <div class="result-wrapper wrapper">
-    <div class="rank">
-      <h1>結果</h1>
-      <p>最も強い感情は、{{ emotions_label_dic[emotions[0][0]] }}です！</p>
-      <br>
-      <h3>詳細</h3>
-      <ul class="app-container result-container">
-        <ul>
-          <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
-        </ul>
-        <ul>
-          <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
-        </ul>
-        <ul>
-          <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
-          <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
-        </ul>
-        <ul>
-          <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
-          <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
-        </ul>
-        <ul>
-          <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
-          <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
-        </ul>
-      </ul>
-      <label class="open" for="pop-up">フィードバックを送信する</label>
-      <input type="checkbox" id="pop-up">
-      <div class="overlay">
-        <div class="window">
-          <label class="close" for="pop-up">×</label>
-          <p class="text">
-          <form action="{{ url_for('save_data') }}" method="POST">
-            「{{ text }}」は
-            <input type="hidden" name="Content" value="{{ text }}"><br>
-            <!-- 分析結果は実際の感情と比べてどうでしたか？ -->
-            驚き
-            <input type="radio" name="surprise" value="1">当てはまる
-            <input type="radio" name="surprise" value="0" checked="checked">当てはまらない<br>
-            悲しみ
-            <input type="radio" name="sadness" value="1">当てはまる
-            <input type="radio" name="sadness" value="0" checked="checked">当てはまらない<br>
-            喜び
-            <input type="radio" name="joy" value="1">当てはまる
-            <input type="radio" name="joy" value="0" checked="checked">当てはまらない<br>
-            怒り
-            <input type="radio" name="anger" value="1">当てはまる
-            <input type="radio" name="anger" value="0" checked="checked">当てはまらない<br>
-            恐れ
-            <input type="radio" name="fear" value="1">当てはまる
-            <input type="radio" name="fear" value="0" checked="checked">当てはまらない<br>
-            嫌悪
-            <input type="radio" name="disgust" value="1">当てはまる
-            <input type="radio" name="disgust" value="0" checked="checked">当てはまらない<br>
-            信頼
-            <input type="radio" name="trust" value="1">当てはまる
-            <input type="radio" name="trust" value="0" checked="checked">当てはまらない<br>
-            期待
-            <input type="radio" name="anticipation" value="1">当てはまる
-            <input type="radio" name="anticipation" value="0" checked="checked">当てはまらない<br>
-
-            <input type="submit" value="送信">
-          </form>
-          </p>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <a href="/">
+            <img src="https://dl.dropboxusercontent.com/s/6lm7i9nv088ekgt/logo.png">
+          </a>
+        </div>
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-right">
+          <a href="./about.html">About</a>
+          <a href="./index.html">診断</a>
+          <!-- ログイン機能を実装したらコメントアウト
+                      <a href="new.html" class="login">Log In</a>
+                      <a href="login.html" class="login">Sign Up</a>
+                      -->
         </div>
       </div>
-      <br>
-      <a href="./index.html">もう一度診断する</a>
-      <br>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <p>©2021 Emo Karte. All Rights Reserved.</p>
-    </div>
-  </footer>
-</body>
+    </header>
+    <div class="result-wrapper wrapper">
+      <div class="rank">
+        <h1>結果</h1>
+        <p>最も強い感情は、{{ emotions_label_dic[emotions[0][0]] }}です！</p>
+        <br>
+        <h3>詳細</h3>
+        <ul class="app-container result-container">
+          <ul>
+            <li>1位 {{ emotions_label_dic[emotions[0][0]] }} {{ emotions[0][1] }}%</li>
+          </ul>
+          <ul>
+            <li>2位 {{ emotions_label_dic[emotions[1][0]] }} {{ emotions[1][1] }}%</li>
+          </ul>
+          <ul>
+            <li>{{ emotions_label_dic[emotions[2][0]] }} {{ emotions[2][1] }}%</li>
+            <li>{{ emotions_label_dic[emotions[3][0]] }} {{ emotions[3][1] }}%</li>
+          </ul>
+          <ul>
+            <li>{{ emotions_label_dic[emotions[4][0]] }} {{ emotions[4][1] }}%</li>
+            <li>{{ emotions_label_dic[emotions[5][0]] }} {{ emotions[5][1] }}%</li>
+          </ul>
+          <ul>
+            <li>{{ emotions_label_dic[emotions[6][0]] }} {{ emotions[6][1] }}%</li>
+            <li>{{ emotions_label_dic[emotions[7][0]] }} {{ emotions[7][1] }}%</li>
+          </ul>
+        </ul>
+        <label class="open" for="pop-up">フィードバックを送信する</label>
+        <input type="checkbox" id="pop-up">
+        <div class="overlay">
+          <div class="window">
+            <label class="close" for="pop-up">×</label>
+            <p class="text">
+            <form action="{{ url_for('save_data') }}" method="POST">
+              「{{ text }}」は
+              <input type="hidden" name="Content" value="{{ text }}"><br>
+              <!-- 分析結果は実際の感情と比べてどうでしたか？ -->
+              驚き
+              <input type="radio" name="surprise" value="1">当てはまる
+              <input type="radio" name="surprise" value="0" checked="checked">当てはまらない<br>
+              悲しみ
+              <input type="radio" name="sadness" value="1">当てはまる
+              <input type="radio" name="sadness" value="0" checked="checked">当てはまらない<br>
+              喜び
+              <input type="radio" name="joy" value="1">当てはまる
+              <input type="radio" name="joy" value="0" checked="checked">当てはまらない<br>
+              怒り
+              <input type="radio" name="anger" value="1">当てはまる
+              <input type="radio" name="anger" value="0" checked="checked">当てはまらない<br>
+              恐れ
+              <input type="radio" name="fear" value="1">当てはまる
+              <input type="radio" name="fear" value="0" checked="checked">当てはまらない<br>
+              嫌悪
+              <input type="radio" name="disgust" value="1">当てはまる
+              <input type="radio" name="disgust" value="0" checked="checked">当てはまらない<br>
+              信頼
+              <input type="radio" name="trust" value="1">当てはまる
+              <input type="radio" name="trust" value="0" checked="checked">当てはまらない<br>
+              期待
+              <input type="radio" name="anticipation" value="1">当てはまる
+              <input type="radio" name="anticipation" value="0" checked="checked">当てはまらない<br>
 
+              <input type="submit" class='button' onclick="onClick()" value="送信">
+            </form>
+            </p>
+          </div>
+        </div>
+        <br>
+        <a href="./index.html">もう一度診断する</a>
+        <br>
+      </div>
+      <footer>
+        <div class="container">
+          <p>©2021 Emo Karte. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+    <!-- SPINNER ORBITS -->
+    <div class="spinner-box disable">
+      <div class="blue-orbit leo"></div>
+      <div class="green-orbit leo"></div>
+      <div class="red-orbit leo"></div>
+      <div class="white-orbit w1 leo"></div>
+      <div class="white-orbit w2 leo"></div>
+      <div class="white-orbit w3 leo"></div>
+    </div>
+  </body>
+  <script>
+    var button = $('.button'),
+        spinner = $('.spinner-box'),
+        wrapper = $('.result-wrapper');
+
+    function onClick() {
+      if (!button.hasClass('loading')) {
+        console.log('AA');
+        spinner.toggleClass('disable');
+        wrapper.toggleClass('disable');
+      } else {
+        spinner.toggleClass('disable');
+        wrapper.toggleClass('disable');
+      }
+    }
+  </script>
 </html>
