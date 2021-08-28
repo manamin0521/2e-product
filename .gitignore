@@ -1,1 +1,5 @@
 /flask/venv/*
+
+/flask/app/model/*
+
+/flask/app/data.sqlite/*

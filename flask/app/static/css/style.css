@@ -1,48 +1,761 @@
-.container ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 0px;
+/* top.html */
+
+* {
+  box-sizing: border-box;
 }
-.container ul li{
-    padding: 10px;
-    width: 180px;
+
+html {
+  height: 100%;
 }
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: left;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2016/11/29/07/21/book-1868068_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.top-wrapper h1 {
+  opacity: 0.8;
+  font-size: 45px;
+  letter-spacing: 5px;
+}
+
+.top-wrapper p {
+  opacity: 0.8;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 100px 0;
+}
+
+.btn-wrapper p {
+  margin: 10px 0;
+}
+
+/*
+
+.signup {
+    background-color: #239b76;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+*/
+
+.diagnosis {
+  padding: 15px 40px;
+  background-color: #f2b84b;
+  cursor: pointer;
+  box-shadow: 0 7px #d9a443;
+}
+
+.diagnosis:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.9;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(13, 34, 38, 0.9);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left {
+  float: left;
+  margin: 5px 0;
+}
+
+.header-right {
+  float: right;
+  margin-right: -25px;
+}
+
+.header-right a {
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  display: block;
+  float: left;
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(217, 215, 191, 0.3);
+}
+
+.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 0;
+  display: none;
+}
+
 .wrapper {
-    text-align: center;
+  position: relative;
+}
+
+footer p {
+  color: #b3aeb5;
+  font-size: 12px;
+}
+
+footer {
+  width: 100%;
+  padding-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+/* about.html */
+
+.about-wrapper {
+  padding: 180px 0 100px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2016/01/09/18/28/notepad-1130743_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.about-container{
+  padding: 5px;
+  height: 100%;
+  background-color: rgba(64,58,56,0.6);
+}
+
+.about-container p {
+  font-size: 0.8em;
+}
+
+/* index.html, result.html */
+
+.rank {
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  background-color: rgba(235,239,242,0.7);
+  text-align: center;
+}
+
+.result-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app-container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 0px;
+}
+
+.app-container ul li {
+  padding: 10px;
+  width: 180px;
+  color: #474644;
+}
+
+.index-wrapper {
+  padding: 240px 0 100px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.result-wrapper {
+  padding: 130px 0 100px 0;
+  height: 100%;
+  background-image: url(https://images.unsplash.com/photo-1473181488821-2d23949a045a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.result-wrapper p {
+  font-size: 1.5em;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+  padding-inline-start: 0;
 }
 
 h1 {
-    margin: 40px;
-    font-size: 1.5em;
+  margin: 30px;
+  font-size: 1.5em;
 }
 
 .button {
-    color: #fff;
-    background-color: #eb6100;
-    border-radius: 1vh;
-    margin-top: 20px;
-    width: 150px;
-    height: 30px;
+  color: #fff;
+  background-color: #cc6f5c;
+  border-radius: 1vh;
+  margin-top: 20px;
+  width: 150px;
+  height: 30px;
 }
 
 .button:hover {
-    color: #f56500;
-    background: #fff;
+  color: #cc6f5c;
+  background: #fff;
 }
 
 .form {
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 1px solid #e5e5e5;
-    width: 20%;
-    min-width: 150px;
-    height: 300px;
-    padding: 8px;
-    margin-top:20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  width: 50%;
+  min-width: 150px;
+  height: 240px;
+  padding: 8px;
+  margin-top: 20px;
+}
+
+/* result.html フィードバック */
+
+.open {
+  margin: 20px 0;
+	cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+  color: #502E73;
+}
+#pop-up {
+	display: none; /* label でコントロールするので input は非表示に */
+}
+.overlay {
+	display: none; /* input にチェックが入るまでは非表示に */
+}
+#pop-up:checked + .overlay {
+	display: block;
+	z-index: 9999;
+	background-color: #00000070;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+.window {
+	width: 90vw;
+	max-width: 580px;
+	height: 340px;
+	background-color: #ffffff;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.text {
+	font-size: 18px;
+	margin: 0;
+}
+.close {
+	cursor:pointer;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	font-size: 20px;
+}
+
+/* thanks.html */
+
+.thanks-wrapper {
+  padding: 500px 0 150px 0;
+  height: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2020/04/22/11/59/thank-you-5077738_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.thanks-container{
+  padding: 5px 0 10px 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 40%;
+  background-color: rgba(64,58,56,0.6);
+  text-align: center;
+}
+
+.btn-home-wrapper {
+  text-align: center;
+  margin: 20px 0 100px 0;
+}
+
+.btn-home-wrapper p {
+  margin: 10px 0;
+}
+
+.home {
+  padding: 15px 40px;
+  background-color: #D68F3E;
+  cursor: pointer;
+  box-shadow: 0 7px #BD7E37;
+}
+
+.home:active {
+  position: relative;
+  top: 7px;
+  box-shadow: none;
+}
+
+
+
+/* 解析中ボタン
+
+.button {
+  position: relative;
+  height: 50px;
+  width: 200px;
+  background-image: none;
+  border: none;
+  outline: none;
+  background-color: #cc6f5c;
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 160px;
+  height: 40px;
+  background-color: black;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(5px);
+  transition: all 0.2s ease-out;
+}
+.button:hover::after {
+  opacity: 0.5;
+  filter: blur(20px);
+  transform: translatey(10px) scalex(1.2);
+}
+.button:active {
+  background-color: #cc6f5c;
+}
+.button:active::after {
+  opacity: 0.3;
+}
+.loading {
+  border-radius: 50px;
+  width: 50px;
+}
+.button.loading::after {
+  width: 40px;
+  border-radius: 100%;
+}
+.spinner {
+  display: block;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  background: transparent;
+  box-sizing: border-box;
+  border-top: 4px solid white;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-radius: 100%;
+  animation: spin 0.6s ease-out infinite;
+}
+
+@keyframes spin {
+  100% {transform: rotate(360deg)}
+
+*/
+
+/* ローディングアニメーション */
+/* KEYFRAMES */
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin3D {
+  from {
+    transform: rotate3d(.5,.5,.5, 360deg);
+  }
+  to{
+    transform: rotate3d(0deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(-135deg);
+  }
+  75% {
+    transform: rotate(-225deg);
+  }
+  100% {
+    transform: rotate(-315deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: .25;
+    transform: scale(.75);
+  }
+}
+
+/* GRID STYLING */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #1d2630;
+  /* display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start; */
+}
+
+.spinner-box {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+
+}
+
+/* SPINNING CIRCLE */
+
+.leo-border-1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63,249,220);
+  background: linear-gradient(0deg, rgba(63,249,220,0.1) 33%, rgba(63,249,220,1) 100%);
+  animation: spin3D 1.8s linear 0s infinite;
+}
+
+.leo-core-1 {
+  width: 100%;
+  height: 100%;
+  background-color: #37474faa;
+  border-radius: 50%;
+}
+
+.leo-border-2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(251, 91, 83);
+  background: linear-gradient(0deg, rgba(251, 91, 83, 0.1) 33%, rgba(251, 91, 83, 1) 100%);
+  animation: spin3D 2.2s linear 0s infinite;
+}
+
+.leo-core-2 {
+  width: 100%;
+  height: 100%;
+  background-color: #1d2630aa;
+  border-radius: 50%;
+}
+
+/* ALTERNATING ORBITS */
+
+.circle-border {
+  width: 150px;
+  height: 150px;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(63,249,220);
+  background: linear-gradient(0deg, rgba(63,249,220,0.1) 33%, rgba(63,249,220,1) 100%);
+  animation: spin .8s linear 0s infinite;
+}
+
+.circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #1d2630;
+  border-radius: 50%;
+}
+
+/* X-ROTATING BOXES */
+
+.configure-border-1 {
+  width: 115px;
+  height: 115px;
+  padding: 3px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fb5b53;
+  animation: configure-clockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-border-2 {
+  width: 115px;
+  height: 115px;
+  padding: 3px;
+  left: -115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63,249,220);
+  transform: rotate(45deg);
+  animation: configure-xclockwise 3s ease-in-out 0s infinite alternate;
+}
+
+.configure-core {
+  width: 100%;
+  height: 100%;
+  background-color: #1d2630;
+}
+
+/* PULSE BUBBLES */
+
+.pulse-container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse-bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #3ff9dc;
+}
+
+.pulse-bubble-1 {
+    animation: pulse .4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+    animation: pulse .4s ease .2s infinite alternate;
+}
+.pulse-bubble-3 {
+    animation: pulse .4s ease .4s infinite alternate;
+}
+
+/* SOLAR SYSTEM */
+
+.solar-system {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orbit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fafbfC;
+  border-radius: 50%;
+}
+
+.earth-orbit {
+  width: 165px;
+  height: 165px;
+  -webkit-animation: spin 12s linear 0s infinite;
+}
+
+.venus-orbit {
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 7.4s linear 0s infinite;
+}
+
+.mercury-orbit {
+  width: 90px;
+  height: 90px;
+  -webkit-animation: spin 3s linear 0s infinite;
+}
+
+.planet {
+  position: absolute;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3ff9dc;
+}
+
+.sun {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #ffab91;
+}
+
+.leo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.blue-orbit {
+  width: 165px;
+  height: 165px;
+  border: 1px solid #91daffa5;
+  -webkit-animation: spin3D 3s linear .2s infinite;
+}
+
+.green-orbit {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #91ffbfa5;
+  -webkit-animation: spin3D 2s linear 0s infinite;
+}
+
+.red-orbit {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #ffca91a5;
+  -webkit-animation: spin3D 1s linear 0s infinite;
+}
+
+.white-orbit {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ffffff;
+  -webkit-animation: spin3D 10s linear 0s infinite;
+}
+
+.w1 {
+  transform: rotate3D(1, 1, 1, 90deg);
+}
+
+.w2 {
+  transform: rotate3D(1, 2, .5, 90deg);
+}
+
+.w3 {
+  transform: rotate3D(.5, 1, 2, 90deg);
+}
+
+.three-quarter-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #fb5b53;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin .5s linear 0s infinite;
+}
+
+.disable {
+  display: none;
 }

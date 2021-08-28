@@ -1,16 +1,79 @@
 <!DOCTYPE html>
-<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="2oiQ7jpso5JMgpa3KvMJNFMkleQy1zg9Hving6N9Rwk" />
+    <title>診断 | Emo Karte</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <title>emo karte</title>
-</head>
-<div class="wrapper">
-    <h1>emo karte</h1>
-    <form method="post">
-        {{ form.Content.label }}<br>
-        <textarea id="Content" name="Content" class="form" required></textarea>
-        <div>
-            <input class="button" type="submit" value="診断する">
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css">
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <a href="/">
+            <img src="https://dl.dropboxusercontent.com/s/6lm7i9nv088ekgt/logo.png">
+          </a>
         </div>
-    </form>
-</div>
+        <span class="fa fa-bars menu-icon"></span>
+        <div class="header-right">
+          <a href="./about.html">About</a>
+          <a href="./index.html">診断</a>
+          <!-- ログイン機能を実装したらコメントアウト
+                        <a href="new.html" class="login">Log In</a>
+                        <a href="login.html" class="login">Sign Up</a>
+                        -->
+        </div>
+      </div>
+    </header>
+    <div class="index-wrapper wrapper">
+      <div class="app-container">
+        <h1>Emo Karte</h1>
+        <form method="post">
+          {{ form.Content.label }}
+          <br>
+          <textarea placeholder="入力の上限は124文字です" id="Content" name="Content" class="form" required></textarea>
+          <div>
+            <button class="button" onclick="onClick()" type="submit">診断する</button>
+          </div>
+        </form>
+      </div>
+      <footer>
+        <div class="container">
+          <p>©2021 Emo Karte. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- SPINNER ORBITS -->
+    <div class="spinner-box disable">
+      <div class="blue-orbit leo"></div>
+      <div class="green-orbit leo"></div>
+      <div class="red-orbit leo"></div>
+      <div class="white-orbit w1 leo"></div>
+      <div class="white-orbit w2 leo"></div>
+      <div class="white-orbit w3 leo"></div>
+    </div>
+  </body>
+
+  <script>
+    var button = $('.button'),
+        spinner = $('.spinner-box'),
+        wrapper = $('.index-wrapper');
+
+    function onClick() {
+      if (!button.hasClass('loading')) {
+        spinner.toggleClass('disable');
+        wrapper.toggleClass('disable');
+      } else {
+        spinner.toggleClass('disable');
+        wrapper.toggleClass('disable');
+      }
+    }
+  </script>
+</html>

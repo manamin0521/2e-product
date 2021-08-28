@@ -1,0 +1,47 @@
+/* タブレット向けレイアウト */
+@media all and (max-width: 1000px) {
+
+    .top-wrapper h1 {
+        font-size: 32px;
+    }
+
+}
+
+  /* スマホ向けレイアウト */
+@media all and (max-width: 670px) {
+
+    .btn {
+        width: 100%;
+    }
+
+    .thanks-container{
+        width: 100%;
+    }
+
+    .top-wrapper {
+        text-align: left;
+    }
+
+    /*
+    .header-right{
+        display: none;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+    */
+
+    .top-wrapper h1 {
+        font-size: 24px;
+    }
+
+    .top-wrapper p {
+        font-size: 14px;
+    }
+
+    .rank {
+        width: 100%;
+    }
+
+}
